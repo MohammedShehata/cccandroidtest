@@ -1,5 +1,6 @@
 package com.sh.cccandroidtest.data.sources.locale.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
@@ -10,6 +11,6 @@ interface FullEstimateDao {
 
     @Transaction
     @Query("SELECT * FROM estimate")
-    fun getFullEstimate(): FullEstimate
+    fun getFullEstimate(): LiveData<FullEstimate>
 
 }

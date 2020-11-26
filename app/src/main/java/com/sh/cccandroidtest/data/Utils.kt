@@ -16,8 +16,8 @@ object Utils {
 
     @SuppressLint("SimpleDateFormat")
     fun formatDate(dateString: String, dateFormat: String): String {
-        val sdf = SimpleDateFormat(dateFormat)
-        val date = sdf.parse(SERVER_DATE_FORMAT)!!
+        val sdf = SimpleDateFormat(SERVER_DATE_FORMAT)
+        val date = sdf.parse(dateString)!!
         return formatDate(date, dateFormat)
     }
 
