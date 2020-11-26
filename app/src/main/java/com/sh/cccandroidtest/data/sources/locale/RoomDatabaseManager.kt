@@ -8,6 +8,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.sh.cccandroidtest.data.models.entities.Estimate
 import com.sh.cccandroidtest.data.models.entities.Person
 import com.sh.cccandroidtest.data.sources.locale.dao.EstimateDao
+import com.sh.cccandroidtest.data.sources.locale.dao.FullEstimateDao
 import com.sh.cccandroidtest.data.sources.locale.dao.PersonDao
 
 @Database(
@@ -18,6 +19,7 @@ abstract class RoomDatabaseManager : RoomDatabase() {
 
     abstract fun estimateDap(): EstimateDao
     abstract fun personDao(): PersonDao
+    abstract fun fullEstimateDao(): FullEstimateDao
 
     companion object {
         private lateinit var instance: RoomDatabaseManager
