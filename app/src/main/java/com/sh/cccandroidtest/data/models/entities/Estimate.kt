@@ -12,7 +12,8 @@ data class Estimate(
     val address: String,
     val number: Int,
     @SerializedName("revision_number") @ColumnInfo(name = "revision_number") val revisionNumber: Int,
-    @SerializedName("created_date") @ColumnInfo(name = "created_date") val createdAt: String,
+    @SerializedName("created_date") @ColumnInfo(name = "created_date") val createdDate: String,
+    @SerializedName("created_by") @ColumnInfo(name = "created_by") val createdBy: String,
     @SerializedName("requested_by") @ColumnInfo(name = "requested_by") val requestedBy: String,
     val contact: String
 )
