@@ -85,7 +85,6 @@
             android:text="@string/est_number"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_separator"
             app:layout_goneMarginStart="10dp" />
@@ -97,7 +96,6 @@
             android:text="@{String.valueOf(fullEstimate.estimate.number)}"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_est_number_title"
             app:layout_constraintTop_toBottomOf="@id/txt_est_number_title"
             app:layout_goneMarginStart="10dp" />
@@ -112,7 +110,6 @@
             android:text="@string/created"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_est_number"
             app:layout_goneMarginStart="10dp" />
@@ -124,7 +121,6 @@
             android:text="@{String.valueOf(fullEstimate.estimate.getFromattedCreatedDate)}"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_created_title"
             app:layout_constraintTop_toBottomOf="@id/txt_created_title"
             app:layout_goneMarginStart="10dp" />
@@ -137,7 +133,6 @@
             android:text="@string/request"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_created"
             app:layout_constraintTop_toBottomOf="@id/txt_created"
             app:layout_goneMarginStart="10dp" />
@@ -149,7 +144,6 @@
             android:text="@{String.valueOf(fullEstimate.requestedBy.fullName())}"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_request_title"
             app:layout_constraintTop_toBottomOf="@id/txt_request_title"
             app:layout_goneMarginStart="10dp" />
@@ -164,7 +158,6 @@
             android:text="@string/revision_number"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guideline_vertical"
             app:layout_constraintTop_toBottomOf="@id/view_separator" />
 
@@ -175,7 +168,6 @@
             android:text="@{String.valueOf(fullEstimate.estimate.revisionNumber)}"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_revision_number_title"
             app:layout_constraintTop_toBottomOf="@id/txt_revision_number_title"
             app:layout_goneMarginStart="10dp" />
@@ -188,7 +180,6 @@
             android:text="@string/created_by"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_revision_number"
             app:layout_constraintTop_toBottomOf="@id/txt_revision_number" />
 
@@ -199,7 +190,6 @@
             android:text="@{String.valueOf(fullEstimate.createdBy.fullName())}"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_created_by_title"
             app:layout_constraintTop_toBottomOf="@id/txt_created_by_title"
             app:layout_goneMarginStart="10dp" />
@@ -212,7 +202,6 @@
             android:text="@string/contact"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_created_by"
             app:layout_constraintTop_toBottomOf="@id/txt_created_by" />
 
@@ -222,7 +211,6 @@
             android:text="@{String.valueOf(fullEstimate.contact.fullName())}"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/txt_contact_title"
             app:layout_constraintTop_toBottomOf="@id/txt_contact_title"
             app:layout_goneMarginStart="10dp" />
