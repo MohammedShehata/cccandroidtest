@@ -4,9 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.sh.cccandroidtest.data.Utils
 
 @Entity(tableName = "estimate")
-data class Estimate(
+class Estimate(
     @PrimaryKey val id: String,
     val company: String,
     val address: String,
@@ -16,4 +17,9 @@ data class Estimate(
     @SerializedName("created_by") @ColumnInfo(name = "created_by") val createdBy: String,
     @SerializedName("requested_by") @ColumnInfo(name = "requested_by") val requestedBy: String,
     val contact: String
-)
+) {
+
+    fun getFromattedCreatedDate(): String {
+        return Utils.formatDate(createdDate, Utils.ESTIMATE_DATE_FORMAT)
+    }
+}

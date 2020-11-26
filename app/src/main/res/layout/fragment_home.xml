@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fullEstimate"
+            type="com.sh.cccandroidtest.data.models.FullEstimate" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_estimate"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_place_holder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="32dp"
+            android:text="@{fullEstimate.estimate.company}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/img_estimate"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{fullEstimate.estimate.address}"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/txt_company"
+            app:layout_constraintTop_toBottomOf="@id/txt_company"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/est_details"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_estimate"
+            app:layout_goneMarginStart="10dp" />
+
+        <View
+            android:id="@+id/view_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey"
+            app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+
+        <TextView
+            android:id="@+id/txt_est_number_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/est_number"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_separator"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:id="@+id/txt_est_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(fullEstimate.estimate.number)}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_est_number_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_est_number_title"
+            app:layout_goneMarginStart="10dp" />
+
+
+        <TextView
+            android:id="@+id/txt_created_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/created"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_est_number"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:id="@+id/txt_created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(fullEstimate.estimate.getFromattedCreatedDate)}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_created_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_created_title"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:id="@+id/txt_request_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/request"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_created"
+            app:layout_constraintTop_toBottomOf="@id/txt_created"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:id="@+id/txt_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(fullEstimate.requestedBy.fullName())}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_request_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_request_title"
+            app:layout_goneMarginStart="10dp" />
+
+
+        <TextView
+            android:id="@+id/txt_revision_number_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/revision_number"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/view_separator" />
+
+        <TextView
+            android:id="@+id/txt_revision_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(fullEstimate.estimate.revisionNumber)}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_revision_number_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_revision_number_title"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:id="@+id/txt_created_by_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/created_by"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_revision_number"
+            app:layout_constraintTop_toBottomOf="@id/txt_revision_number" />
+
+        <TextView
+            android:id="@+id/txt_created_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(fullEstimate.createdBy.fullName())}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_created_by_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_created_by_title"
+            app:layout_goneMarginStart="10dp" />
+
+        <TextView
+            android:id="@+id/txt_contact_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/contact"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_created_by"
+            app:layout_constraintTop_toBottomOf="@id/txt_created_by" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(fullEstimate.contact.fullName())}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txt_contact_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_contact_title"
+            app:layout_goneMarginStart="10dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
